@@ -2,6 +2,8 @@
 using PlaywrightAutomation.Components;
 using PlaywrightAutomation.Extensions;
 using PlaywrightAutomation.Utils;
+using System.Threading;
+using System.Xml;
 using TechTalk.SpecFlow;
 
 namespace PlaywrightAutomation.Steps.ComponentSteps
@@ -19,8 +21,8 @@ namespace PlaywrightAutomation.Steps.ComponentSteps
         [When(@"User clicks '([^']*)' button")]
         public void WhenUserClicksButton(string button)
         {
-            _page.Component<Button>(button).ClickAsync().GetAwaiter().GetResult();
-            _page.WaitForLoadStateAsync(LoadState.DOMContentLoaded).GetAwaiter().GetResult();
+            _page.Component<Button>(button).Click(LoadState.DOMContentLoaded);
+            Thread.Sleep(2000);
         }
     }
 }

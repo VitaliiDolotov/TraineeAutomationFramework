@@ -1,4 +1,6 @@
-﻿using PlaywrightAutomation.Extensions;
+﻿using ChoETL;
+using Microsoft.Playwright;
+using PlaywrightAutomation.Extensions;
 
 namespace PlaywrightAutomation.Components
 {
@@ -6,8 +8,14 @@ namespace PlaywrightAutomation.Components
     {
         public override string Construct()
         {
-            var selector = $"//button[@data-id='button-{Identifier.ToAutomationValue()}']";
+            var selector = $"//*[@data-id='button-{Identifier.ToAutomationValue()}']";
             return selector;
+        }
+
+        public void Click(LoadState loadState)
+        {
+            Instance.ClickAsync().Reset();
+            Page.WaitForLoadStateAsync(loadState).GetAwaiter().GetResult();
         }
     }
 }
