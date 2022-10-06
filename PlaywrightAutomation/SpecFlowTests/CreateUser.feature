@@ -17,6 +17,7 @@ Scenario: CheckThatNewUserCanBeCreated
 		| Column        | Data    |
 		| User Name     | Vitalii |
 		| Year of Birth | 1989    |
+	# Data cleanup
 	When User clicks 'Delete' button in 'Users' table for row with data
 		| Column        | Data    |
 		| User Name     | Vitalii |

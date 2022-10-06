@@ -22,7 +22,8 @@ namespace PlaywrightAutomation.Steps.ComponentSteps
         public void WhenUserClicksButton(string button)
         {
             _page.Component<Button>(button).Click(LoadState.DOMContentLoaded);
-            Thread.Sleep(2000);
+            _page.Component<Button>(button)
+                .WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Detached }).GetAwaiter().GetResult();
         }
     }
 }

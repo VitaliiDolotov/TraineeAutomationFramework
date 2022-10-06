@@ -47,10 +47,9 @@ namespace PlaywrightAutomation.Steps.ComponentSteps
             var tableElement = _page.Component<Components.TableComponent.Table>(tableName);
             var tableRow = tableElement.GetRow(columnsWithData);
 
-            _page.Component<Button>(buttonName, new BaseWebComponent.Properties() { Parent = tableRow }).ClickAsync().GetAwaiter().GetResult();
-
-            // TODO Replace static sleep
-            Thread.Sleep(1500);
+            var button = _page.Component<Button>(buttonName, new BaseWebComponent.Properties() { Parent = tableRow });
+            button.ClickAsync().GetAwaiter().GetResult();
+            button.WaitForAsync(new LocatorWaitForOptions { State = WaitForSelectorState.Detached });
         }
     }
 }
