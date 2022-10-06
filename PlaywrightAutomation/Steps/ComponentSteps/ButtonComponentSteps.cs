@@ -20,7 +20,7 @@ namespace PlaywrightAutomation.Steps.ComponentSteps
         public void WhenUserClicksButton(string button)
         {
             _page.Component<Button>(button).ClickAsync().GetAwaiter().GetResult();
-            _page.WaitForLoadStateAsync(LoadState.NetworkIdle).GetAwaiter().GetResult();
+            _page.WaitForLoadStateAsync(LoadState.DOMContentLoaded).GetAwaiter().GetResult();
         }
     }
 }

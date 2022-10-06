@@ -14,22 +14,25 @@ namespace PlaywrightAutomation.Components.TableComponent
             return selector;
         }
 
-        public IElementHandle GetRow(List<KeyValuePair<string, string>> columnsWithData)
+        public ILocator GetRow(List<KeyValuePair<string, string>> columnsWithData)
         {
-            foreach (IElementHandle row in Rows.ElementHandlesAsync().Result)
+            for (int i = 0; i < Rows.CountAsync().Result; i++)
             {
-                if (IsRowContainsData(row, columnsWithData))
-                    return row;
+                if (IsRowContainsData(Rows.Nth(i), columnsWithData))
+                    return Rows.Nth(i);
             }
 
             throw new System.Exception($"There are no row with appropriate information in '{Identifier}' table");
         }
 
-        public bool IsRowContainsData(IElementHandle row, List<KeyValuePair<string, string>> columnAndData)
+        public bool IsRowContainsData(ILocator row, List<KeyValuePair<string, string>> columnAndData)
         {
             foreach (KeyValuePair<string, string> cell in columnAndData)
             {
-                var cellText = Page.Component<TableData>(cell.Key)
+                var cellText = Page.Component<TableData>(cell.Key, new Properties()
+                {
+                    Parent = row
+                })
                     .InnerTextAsync().Result
                     .Trim();
 
