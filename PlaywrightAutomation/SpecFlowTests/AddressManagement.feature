@@ -1,6 +1,6 @@
 ﻿Feature: AddressManagement
 
-Test cases related to the Address management functionality
+Testcases related to the Address management functionality
 
 Background:
 	Given User is on Automation trainee website

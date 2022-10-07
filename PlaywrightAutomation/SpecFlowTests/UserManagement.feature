@@ -1,6 +1,6 @@
 ﻿Feature: UserManagement
 
-Test cases related to the User management functionality
+Testcases related to the User management functionality
 
 Background:
 	Given User is on Automation trainee website
