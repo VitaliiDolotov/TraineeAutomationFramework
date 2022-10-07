@@ -13,7 +13,7 @@ Scenario: CheckThatNewUserCanBeCreated
 	When User enters '1989' text to 'Year of Birth' input
 	When User clicks 'Add User' button
 	Then 'Users and Addresses' page is opened
-	Then following data is displayed in 'Users' table
+	Then row with following data is displayed in 'Users' table
 		| Column        | Data    |
 		| User Name     | Vitalii |
 		| Year of Birth | 1989    |
@@ -22,7 +22,4 @@ Scenario: CheckThatNewUserCanBeCreated
 		| Column        | Data    |
 		| User Name     | Vitalii |
 		| Year of Birth | 1989    |
-	Then 'User delete confirmation' page is opened
-	Then delete message is displayed for 'Vitalii' user
 	When User clicks 'Yes' button
-	Then 'Users and Addresses' page is opened

@@ -22,7 +22,7 @@ namespace PlaywrightAutomation.Components.TableComponent
                     return Rows.Nth(i);
             }
 
-            throw new System.Exception($"There are no row with appropriate information in '{Identifier}' table");
+            return null;
         }
 
         public bool IsRowContainsData(ILocator row, List<KeyValuePair<string, string>> columnAndData)
