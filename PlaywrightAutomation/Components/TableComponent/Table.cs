@@ -6,7 +6,7 @@ namespace PlaywrightAutomation.Components.TableComponent
 {
     internal class Table : BaseWebComponent
     {
-        public ILocator Rows => Page.Locator("//tbody//tr");
+        public ILocator Rows => Instance.Locator("//tbody//tr");
 
         public override string Construct()
         {
