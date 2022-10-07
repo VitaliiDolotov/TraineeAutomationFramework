@@ -19,7 +19,9 @@ namespace PlaywrightAutomation.Steps.ComponentSteps
         [When(@"User enters '([^']*)' text to '([^']*)' input")]
         public void WhenUserEntersTextToInput(string text, string input)
         {
-            _page.Component<Input>(input).TypeAsync(text).GetAwaiter().GetResult();
+            var inputElement = _page.Component<Input>(input);
+            inputElement.FillAsync(string.Empty).GetAwaiter().GetResult();
+            inputElement.TypeAsync(text).GetAwaiter().GetResult();
         }
     }
 }
