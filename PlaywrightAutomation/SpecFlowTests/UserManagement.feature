@@ -14,12 +14,14 @@ Scenario: CheckThatNewUserCanBeCreated
 	When User clicks 'Create' button
 	Then 'Users and Addresses' page is opened
 	Then row with following data is displayed in 'Users' table
-		| Column        | Data |
-		| User Name     | Oleg |
-		| Year of Birth | 1989 |
+		| Column        | Data      |
+		| User Name     | Oleg      |
+		| Year of Birth | 1989      |
+		| Gender        | Undefined |
 	# Data cleanup
 	When User clicks 'Delete' button in 'Users' table for row with data
-		| Column        | Data |
-		| User Name     | Oleg |
-		| Year of Birth | 1989 |
+		| Column        | Data      |
+		| User Name     | Oleg      |
+		| Year of Birth | 1989      |
+		| Gender        | Undefined |
 	When User clicks 'Yes' button
