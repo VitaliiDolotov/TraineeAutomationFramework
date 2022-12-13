@@ -1,0 +1,12 @@
+"Added files HT1 and HT2"
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch Vasylyna_Vyshnevska
+# Changes to be committed:
+#	new file:   PlaywrightAutomation/SpecFlowTests/HT1.feature
+#	new file:   PlaywrightAutomation/SpecFlowTests/HT2.feature
+#
+# Changes not staged for commit:
+#	modified:   PlaywrightAutomation/PlaywrightAutomation.csproj
+#

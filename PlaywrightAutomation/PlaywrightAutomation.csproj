@@ -9,6 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <SpecFlowObsoleteCodeBehindFiles Remove="SpecFlowTests\UserManagement - Copy.feature.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutomationUtils" Version="1.1.92.4" />
     <PackageReference Include="BoDi" Version="1.5.0" />
     <PackageReference Include="ChoETL" Version="1.2.1.48" />
@@ -33,6 +37,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <Folder Include="Models\RuntimeVariables\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SpecFlowFeatureFiles Update="SpecFlowTests\HT1.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
+    <SpecFlowFeatureFiles Update="SpecFlowTests\HT2.feature">
+      <Visible>$(UsingMicrosoftNETSdk)</Visible>
+      <CodeBehindFile>%(RelativeDir)%(Filename).feature$(DefaultLanguageSourceExtension)</CodeBehindFile>
+    </SpecFlowFeatureFiles>
   </ItemGroup>
 
 </Project>
