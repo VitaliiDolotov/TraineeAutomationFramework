@@ -1,27 +1,31 @@
-﻿Feature: UserManagement
+﻿Feature: 1
 
-Test cases related to the User management functionality
+Test cases related to the Address management functionality
 
 Background:
 	Given User is on Automation trainee website
 	Then 'Users and Addresses' page is opened
 
 @Regression
-Scenario: CheckThatNewUserCanBeCreated
-	When User navigates to 'Add User' page
-	When User enters 'Oleg' text to 'User Name' input
-	When User enters '1989' text to 'Year of Birth' input
+Scenario: CheckThatNewAddresseCanBeCreated
+	When User navigates to 'Add Address' page
+	When User enters 'Topolina Street' text to 'Street Address' input
+	When User enters 'Odesa' text to 'City' input
+	When User enters 'Ukraine' text to 'State' input
+	When User enters '09876' text to 'Zip Code' input
 	When User clicks 'Create' button
 	Then 'Users and Addresses' page is opened
-	Then row with following data is displayed in 'Users' table
-		| Column        | Data      |
-		| User Name     | Oleg      |
-		| Year of Birth | 1989      |
-		| Gender        | Undefined |
+	Then row with following data is displayed in 'Addresses' table
+		| Column         | Data              |
+		| Street Address | Topolina Street |
+		| City           | Odesa              |
+		| State          | Ukraine           |
+		| Zip Code       | 09876             |
 	# Data cleanup
-	When User clicks 'Delete' button in 'Users' table for row with data
-		| Column        | Data      |
-		| User Name     | Oleg      |
-		| Year of Birth | 1989      |
-		| Gender        | Undefined |
+	When User clicks 'Delete' button in 'Addresses' table for row with data
+		| Column         | Data              |
+		| Street Address | Topolina Street |
+		| City           | Odesa              |
+		| State          | Ukraine           |
+		| Zip Code       | 09876             |
 	When User clicks 'Yes' button
