@@ -8,7 +8,7 @@ namespace PlaywrightAutomation.Pages
 
         public string BuildAlertMessage(string userName)
         {
-            return $"Are you sure you want to delete '{userName}' user";
+            return $"Are you sure you want to delete {userName}";
         }
     }
 }
