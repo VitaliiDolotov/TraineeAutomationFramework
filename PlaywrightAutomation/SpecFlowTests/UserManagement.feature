@@ -26,7 +26,7 @@ Scenario: CheckThatNewUserCanBeCreated
 		| Gender        | Undefined |
 	When User clicks 'Yes' button
 
-		# Add new address
+		# Add address
 	Scenario: CheckThatNewAddressCanBeCreated
 	When User navigates to 'Add Address' page
 	When User enters '121 Shmidt' text to 'Street Address' input
